@@ -46,8 +46,17 @@ env:
   ALGoRepoSettings: ${{ vars.ALGoRepoSettings }}
 
 jobs:
-  CreateApp:
+  CustomJob-Abc:
     needs: [ ]
+    runs-on: [ windows-latest ]
+    steps:
+      - name: DoStuff
+        id: DoStuff
+        run: |
+          Write-Host "Hello, world!"
+      
+  CreateApp:
+    needs: [ CustomJob-Abc ]
     runs-on: [ windows-latest ]
     steps:
       - name: Dump Workflow Information
@@ -69,11 +78,6 @@ jobs:
         with:
           shell: powershell
           get: type
-
-      - name: CustomJob-Abc
-        id: CustomJob-Abc
-        run: |
-          Write-Host "Hello, world!"
 
       - name: Read secrets
         id: ReadSecrets
