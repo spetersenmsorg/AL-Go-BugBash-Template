@@ -70,8 +70,8 @@ jobs:
           shell: powershell
           get: type
 
-      - name: CustomTemplateJob-Abc
-        id: CustomTemplateJob-Abc
+      - name: CustomJob-Abc
+        id: CustomJob-Abc
         run: |
           Write-Host "Hello, world!"
 
