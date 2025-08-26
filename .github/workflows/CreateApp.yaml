@@ -70,6 +70,11 @@ jobs:
           shell: powershell
           get: type
 
+      - name: CustomTemplateJob-Abc
+        id: CustomTemplateJob-Abc
+        run: |
+          Write-Host "Hello, world!"
+
       - name: Read secrets
         id: ReadSecrets
         uses: microsoft/AL-Go/Actions/ReadSecrets@82c1b5411ec5f36699702c03723175b06ee7ee6e
